@@ -10,7 +10,7 @@ use Illuminate\View\View;
 class BlogController extends Controller
 {
     /**
-     * Вывод информации о категории и постам в данной категории
+     * Вывод информации о хештеге и постам в данной категории
      *
      * @param $id
      * @return Factory|View

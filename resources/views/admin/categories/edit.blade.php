@@ -5,7 +5,7 @@
     <div class="container">
         <section class="experience section">
             <div class="section-inner">
-                <h2>Редактирование категории</h2>
+                <h2>Редактирование хештега</h2>
 
                 <form class="form-horizontal" action="{{route('admin.category.update', $category)}}" method="post">
                     {{csrf_field()}}
@@ -17,10 +17,10 @@
                     </select>
 
                     <label for="title">Название</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="Заголовок категории" value="{{$category->title ?? ''}}" required>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Название хештега" value="{{$category->title ?? ''}}" required>
                     <hr />
 
-                    <input class="btn btn-primary" type="submit" value="Сохранить">
+                    <input class="btn btn-primary" type="submit" value="Опубликовать">
                 </form>
             </div>
         </section>

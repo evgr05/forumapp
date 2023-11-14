@@ -24,13 +24,13 @@
             </div>
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{route('admin.category.index')}}">Категории</a></li>
+                    <li><a href="{{route('admin.category.index')}}">Хештеги</a></li>
                     <li><a href="{{route('admin.post.index')}}">Посты</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @guest
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('login') }}">Вход</a></li>
+                        <li><a href="{{ route('register') }}">Регистрация</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>

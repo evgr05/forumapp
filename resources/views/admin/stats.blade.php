@@ -6,7 +6,7 @@
         <div class="row">
             <section class="experience section">
                 <div class="section-inner">
-                    <p>Всего категорий: {{$categories_count ?? 0}}</p>
+                    <p>Всего хештегов: {{$categories_count ?? 0}}</p>
                     <p>Всего постов: {{$post_count ?? 0}}</p>
                 </div>
             </section>
@@ -18,8 +18,9 @@
             <section class="experience section">
                 <div class="section-inner">
                     <div class="col-sm-6">
-                        <a href="{{route('admin.category.create')}}" class="btn btn-block btn-default">Создать категорию</a>
-                        <h4>Последние добавленные категории:</h4>
+                        <a href="{{route('admin.category.create')}}" class="btn btn-block btn-default">Создать хештег</a>
+                        <div class="container">
+                            <h4>Последние добавленные хештеги:</h4>
                         @if(!empty($categories))
                             @foreach($categories as $category)
                                 <a href="{{route('admin.category.edit', $category)}}" class="list-group-item">
@@ -30,11 +31,14 @@
                                 </a>
                             @endforeach
                         @else
-                            <p>Нет категорий</p>
+                            <p>Нет хештегов</p>
                         @endif
                     </div>
+    </div>
                     <div class="col-sm-6">
+                    
                         <a href="{{route('admin.post.create')}}" class="btn btn-block btn-default">Создать пост</a>
+                        <div class="container">
                         <h4>Последние добавленные посты:</h4>
                         @if(!empty($posts))
                             @foreach($posts as $post)
@@ -49,6 +53,7 @@
                             <p>Нет постов</p>
                         @endif
                     </div>
+                </div>
 
                     <div style="width: 100%; clear: both;"></div>
                 </div>

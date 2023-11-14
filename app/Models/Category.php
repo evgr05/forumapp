@@ -42,7 +42,7 @@ class Category extends Model
     public $timestamps = false;
 
     /**
-     * Возвращает посты, связанные с категорией
+     * Возвращает посты, связанные с хештегом
      *
      * @return HasMany
      */
@@ -52,7 +52,7 @@ class Category extends Model
     }
 
     /**
-     * Возвращает $count последних добавленных категорий
+     * Возвращает $count последних добавленных хештегов
      *
      * @param $query
      * @param $count

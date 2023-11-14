@@ -1,26 +1,19 @@
 @extends('admin.layouts.app_admin')
-
 @section('content')
-
     <div class="container">
         <section class="experience section">
             <div class="section-inner">
-
-                <h2>Категории</h2>
-
-                <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right">Создать категорию</a>
-
+                <h2>Хештеги</h2>
+                <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right">Создать хештег</a>
                 <table class="table table-striped">
                     <tr>
                         <td>Название</td>
-                        <td>Видимость</td>
                         <td>Действие</td>
                     </tr>
                     <tbody>
                         @forelse($categories as $category)
                             <tr>
                                 <td>{{$category->title}}</td>
-                                <td>{{$category->published}}</td>
                                 <td>
                                     <form onsubmit="if(confirm('Удалить?')){return true}else{return false}" action="{{route('admin.category.destroy', $category)}}" method="post">
                                         {{csrf_field()}}
@@ -34,7 +27,7 @@
                             </tr>
                             @empty
                             <tr>
-                                <td colspan="3" class="text-center"><h2>Нет категорий</h2></td>
+                                <td colspan="3" class="text-center"><h2>Нет хештегов</h2></td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -48,11 +41,9 @@
                         </tr>
                     </tfoot>
                 </table>
-
             </div>
         </section>
     </div>
-
 @endsection
 
 

@@ -13,14 +13,14 @@
                 <table class="table table-striped">
                     <tr>
                         <td>Название</td>
-                        <td>Видимость</td>
+                        <!--<td>Видимость</td>-->
                         <td>Действие</td>
                     </tr>
                     <tbody>
                     @forelse($posts as $post)
                         <tr>
                             <td>{{$post->title}}</td>
-                            <td>{{$post->published}}</td>
+                            <!--<td>{{$post->published}}</td>-->
                             <td>
                                 <form onsubmit="if(confirm('Удалить?')){return true}else{return false}" action="{{route('admin.post.destroy', $post)}}" method="post">
                                     {{csrf_field()}}

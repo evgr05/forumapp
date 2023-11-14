@@ -51,7 +51,6 @@ class PostController extends Controller
     {
         $data = $this->validate($request, [
             'title'       => 'required|max:255',
-            'desc_short'  => 'required',
             'desc'        => 'required',
             'published'   => 'boolean',
             'category_id' => 'required|exists:categories,id',
@@ -59,7 +58,7 @@ class PostController extends Controller
             'required' => 'Поле :attribute не заполнено',
             'unique'   => 'Поле :attribute не уникально',
             'max'      => 'Поле :attribute не может быть длиннее 255 символов',
-            'exists'   => 'Вы указали некорректное поле категории',
+            'exists'   => 'Вы указали некорректное поле хештега',
         ]);
 
         $data['created_by'] = Auth::id();
@@ -96,7 +95,6 @@ class PostController extends Controller
     {
         $data = $this->validate($request, [
             'title'       => 'required|max:255',
-            'desc_short'  => 'required',
             'desc'        => 'required',
             'published'   => 'boolean',
             'category_id' => 'required|exists:categories,id',
@@ -104,7 +102,7 @@ class PostController extends Controller
             'required' => 'Поле :attribute не заполнено',
             'unique'   => 'Поле :attribute не уникально',
             'max'      => 'Поле :attribute не может быть длиннее 255 символов',
-            'exists'   => 'Вы указали некорректное поле категории',
+            'exists'   => 'Вы указали некорректное поле хештега',
         ]);
 
         $data['created_by'] = $post->created_by;

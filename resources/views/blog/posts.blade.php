@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('title', 'Интересные истории')
-
 @section('content')
 <span>Интересные истории</span><br>
             <div class="imag">
@@ -10,20 +8,13 @@
             <a href="{{ route('admin.post.create') }}">
                 <button class="btn" >РАССКАЗАТЬ</button>
             </a><br>
-            <a href="">
-                <button class="btn">ПЕРЕЙТИ В ЛЕНТУ</button>
-            </a><br>
             <a href="{{ route('admin.index') }}" title="">
                 <button class="btn">АДМИН-ПАНЕЛЬ</button>
             </a>
-
-
-
-
-
+            <h1>Лента:</h1><br>
             <aside class="skills aside section">
     <div class="section-inner">
-        <h2 class="heading">Категории публикаций</h2>
+        <h2 class="heading">Хештеги</h2>
         <div class="content">
             <div class="skillset">
                 @if(!empty($categories))
@@ -41,26 +32,16 @@
         </div>
     </div>
 </aside>
-
 <aside class="credits aside section">
-    
 </aside>
-
-
-
-
-
 @forelse($posts as $post)
         <section class="experience section">
             <div class="section-inner">
                 <h2 class="heading"><a href="{{route('post', $post->id)}}">{{$post->title}}</a></h2>
                 <div class="content">
-                    {!! $post->desc_short !!}
+                    {!! $post->desc !!}
                 </div>
             </div>
-
-
-            
         </section>
         @empty
             <section class="experience section">
@@ -74,5 +55,4 @@
             </section>
         @endforelse
         @if($posts) {{$posts->links()}} @endif
-
 @endsection

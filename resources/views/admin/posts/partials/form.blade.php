@@ -7,16 +7,15 @@
 <label for="title">Заголовок</label>
 <input type="text" class="form-control" id="title" name="title" placeholder="Заголовок поста" value="{{$post->title ?? ''}}" required>
 
-<label for="category_id">Категория</label>
+<label for="category_id">Хештег</label>
 <select class="form-control" name="category_id" id="category_id" multiple>
     @include('admin.posts.partials.categories', ['categories' => $categories])
 </select>
 
-<label for="desc_short">Краткое описание</label>
-<textarea class="form-control" id="desc_short" name="desc_short">{{$post->desc_short ?? ''}}</textarea>
+<label for="desc_short">Описание</label>
+<textarea class="form-control" id="desc_short" name="desc">{{$post->desc ?? ''}}</textarea>
 
-<label for="desc">Полное описание</label>
-<textarea class="form-control" id="desc" name="desc">{{$post->desc ?? ''}}</textarea>
+
 <!-- 
 <label for="meta_title">SEO: Title</label>
 <input type="text" class="form-control" id="meta_title" name="meta_title" placeholder="SEO: Title" value="{{$post->meta_title ?? ''}}">
@@ -30,4 +29,4 @@
 
 <hr />
 
-<input class="btn btn-primary" type="submit" value="Сохранить">
+<input class="btn btn-primary" type="submit" value="Опубликовать">

@@ -14,7 +14,7 @@ use Illuminate\Validation\ValidationException;
 class CategoryController extends Controller
 {
     /**
-     * Страница отображения информации о категориях
+     * Страница отображения информации о хештегах
      *
      * @return Application|Factory|View
      */
@@ -26,7 +26,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Страница создания новой категории
+     * Страница создания новой хештега
      *
      * @return Application|Factory|View
      */
@@ -36,7 +36,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Принимает данные из формы создания новой категории, создает категорию и редиректит на страницу со списком
+     * Принимает данные из формы создания новой хештега, создает категорию и редиректит на страницу со списком
      * категорий
      *
      * @param Request $request
@@ -54,11 +54,11 @@ class CategoryController extends Controller
             'max'      => 'Поле :attribute не может быть длиннее 30 символов',
         ]));
 
-        return redirect()->route('admin.category.index')->with('status', 'Категория успешно создана!');
+        return redirect()->route('admin.category.index')->with('status', 'Хештег успешно создан!');
     }
 
     /**
-     * Страница редактирования категории
+     * Страница редактирования хештега
      *
      * @param Category $category
      * @return Factory|\Illuminate\View\View
@@ -71,7 +71,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Изменяет данные о категории и редиректит обратно на страницу редактирования этой категории
+     * Изменяет данные о хештега и редиректит обратно на страницу редактирования этой хештега
      *
      * @param Request $request
      * @param Category $category
@@ -89,11 +89,11 @@ class CategoryController extends Controller
             'max'      => 'Поле :attribute не может быть длиннее 30 символов',
         ]));
 
-        return redirect()->route('admin.category.edit', $category)->with('status', 'Категория успешно обновлена!');
+        return redirect()->route('admin.category.edit', $category)->with('status', 'Хештег успешно обновлен!');
     }
 
     /**
-     * Удаление категории
+     * Удаление хештега
      *
      * @param Category $category
      * @return RedirectResponse
@@ -102,6 +102,6 @@ class CategoryController extends Controller
     {
         $category->delete();
 
-        return redirect()->route('admin.category.index')->with('status', 'Категория успешно удалена');
+        return redirect()->route('admin.category.index')->with('status', 'Хештег успешно удален');
     }
 }

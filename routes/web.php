@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 // Главная
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-// Просмотр категорий и постов
+// Просмотр хештегов и постов
 Route::get('/blog/category/{id?}', [BlogController::class, 'category'])->name('category');
 Route::get('/blog/post/{id?}', [BlogController::class, 'post'])->name('post');
 Route::get('/blog/posts', [PostController::class, 'index'])->name('posts');

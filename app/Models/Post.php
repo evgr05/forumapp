@@ -13,7 +13,6 @@ use Illuminate\Support\Carbon;
  * @property int $id
  * @property string $title
  * @property int $category_id
- * @property string|null $desc_short
  * @property string $desc
  * @property int|null $published
  * @property int $view
@@ -50,7 +49,7 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'category_id', 'desc_short', 'desc', 'published', 'created_by', 'edit_by'
+        'title', 'category_id', 'desc', 'published', 'created_by', 'edit_by'
     ];
 
     /**
@@ -77,7 +76,7 @@ class Post extends Model
     }
 
     /**
-     * Возвращает название категории, по значению category_id у поста
+     * Возвращает название хештега, по значению category_id у поста
      *
      * @param int $id
      * @return mixed
